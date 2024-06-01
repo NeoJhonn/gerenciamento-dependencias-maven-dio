@@ -24,7 +24,10 @@ Path, clica em novo e coloca o caminho bin do maven.
 # Comandos cmd do Maven
 
 * criar um projeto pelo cmd:
-mvn archetype:generate ``-DgroupId=br.com.nomeGrupo -DartifactId=nomeDoProjeto -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false``
+
+```
+mvn archetype:generate -DgroupId=br.com.nomeGrupo -DartifactId=nomeDoProjeto -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false
+```
 
 
 * compilar: ``mvn compile``
