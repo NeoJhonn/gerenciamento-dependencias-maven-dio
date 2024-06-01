@@ -67,11 +67,13 @@ Adicionando dependências ao Projeto
 
 ### No pom, dentro da tag <dependencies>, adicione a dependência desejada e salve as alterações do arquivo:
 
-  ``<dependency>
-  <groupId>org.hibernate</groupId>
-  <artifactId>hibernate-search-orm</artifactId>
-  <version>5.11.9.final</version>
-  </dependency>``
+  ```
+  <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-search-orm</artifactId>
+      <version>5.11.9.final</version>
+  </dependency>
+  ```
 
 - em seguide no cmd execulte o comando do Maven para compilar e baixar a nova dependência: mvn compile
 
@@ -84,11 +86,13 @@ local para ser usada em um projeto ou ser enviado para o maven. Para usar o comp
 dependência no pom do componente copie o groupId, artifactId e version e coloque dentro de uma tag dependency e
 adicione no seu pomo como de costume.
 
-``<dependency>
+```
+<dependency>
     <artifactId>spring-boot-starter-parent</artifactId>
     <groupId>org.springframework.boot</groupId>
     <version>3.2.0</version>
-</dependency>``
+</dependency>
+``` 
 
 * Existem dois tipos de dependências no Maven:
   - Diretas= dependências declaradas no pom.xml
@@ -104,12 +108,14 @@ runtime, test e compile.
 
 - Você pode definir o espopo da depêndia atravez da tag <scope> logo abaixo da dependência no pom:
 
-``<dependency>
+```
+<dependency>
    <groupId>org.modelmapper</groupId>
    <artifactId>modelmapper</artifactId>
    <version>3.1.1</version>
    <scope>compile</scope>
-</dependency>``
+</dependency>
+```
 
 - Tipos de escopo
   - ``<scope>compile</scope>`` = escopo padrâo, ou seja todas as dependências do componente irão junto, nesta caso é opcional
@@ -162,18 +168,26 @@ integration-test, package, install, deploy(todos são comandos mvn).
 # Projetos Multi-módulos
 
 * Crie um projeto como de costume:
-``mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=multi-modules-project -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false``
+```
+mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=multi-modules-project -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false
+```
 
 * Abra o projeto e artere a tag packaging para pom pois vai ser um projeto que agrega os demais: <packaging>pom</packaging>
 
 * Dentro da pasta do projeto, abra os terminal e crie os modules necessários dentro da pasta do projeto:
 ex:
 
-``mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=core -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false``
+```
+mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=core -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false
+```
 
-``mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=service -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false``
+```
+mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=service -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false
+```
 
-``mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=controller -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false``
+```
+mvn archetype:generate -DgroupId=br.com.jhonnyazevedo -DartifactId=controller -Darchetype=maven-archetype-quickstart -Dversion=1.4 -DinteractiveMode=false
+```
 
 * se você olhar o pom do projeto princiapl(<parente>) tem uma tag <modules> dentro dela o maven já adiciona automaticamente os sub módules que você criou.
 
@@ -200,29 +214,33 @@ ex: ``mvn dependency:help``
 da tag específica:
 ex:
 
-``<plugins>
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.13.0</version>
-    <configuration> 
-        <source>1.8</source>
-        <target>1.8</target>
-    </configuration>
-</plugin>
-</plugins>``
+```
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration> 
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+    </plugin>
+</plugins>
+```
 
 # Gerando um javadoc no projeto
 
 - adicione o plugin no pom:
 
-``<plugins>
+```
+<plugins>
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-javadoc-plugin</artifactId>
     <version>3.3.1</version>
   </plugin>
-</plugins>``
+</plugins>
+```
 
 - execute o plugin na linha de comando: ``mvn javadoc:javadoc``
 
