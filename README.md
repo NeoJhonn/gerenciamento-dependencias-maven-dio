@@ -19,7 +19,7 @@ Path, clica em novo e coloca o caminho bin do maven.
 
 * Para verificar se a instalação esta correta, no cmd, digite: mvn --version
 
-----------------------------------------------------------
+
 
 # Comandos cmd do Maven
 
@@ -35,11 +35,12 @@ mvn archetype:generate ``-DgroupId=br.com.nomeGrupo -DartifactId=nomeDoProjeto -
 
 * Limpar diretório de trabalho: ``mvn clean`` => limpa a pasta target
 
-------------------------------------
+
 
 * Maven archetype = nada mais do que um template que possibilita a personalização e a configuração de como o projeto vai ser
 construído. Definimos: versão de componentes, quais componentes serão inseridos automaticamente, organização de pacotes e
 organização de arquivos.
+
 
 * Maven archetype list= o template/archetype que faz mais sentido para o meu projeto.
 lista de archetype disponível em: https://maven.apache.org/archetypes/index.html => clicando no archetype mostra o comando mvn de
@@ -48,7 +49,7 @@ Há archetypes disponíveis tambem no git hub, basta clonar o projeto de lá.
 ex: https://github.com/openjfx/javafx-maven-archetypes // https://gist.github.com/zbigniewTomczak/4235871
 // https://mvnrepository.com/search?q=archetype&sort=popular
 
-------------------------------------------
+
 
 # POM
 
